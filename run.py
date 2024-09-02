@@ -1,135 +1,66 @@
-import gspread
-from google.oauth2.service_account import Credentials
+from datetime import datetime
 
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
+def get_zodiac_sign(day, month):
+    if (month == 3 and day >= 21) or (month == 4 and day <= 19):
+        return "Aries", "Courageous, determined, and confident."
+    elif (month == 4 and day >= 20) or (month == 5 and day <= 20):
+        return "Taurus", "Reliable, patient, and devoted."
+    elif (month == 5 and day >= 21) or (month == 6 and day <= 20):
+        return "Gemini", "Gentle, affectionate, and curious."
+    elif (month == 6 and day >= 21) or (month == 7 and day <= 22):
+        return "Cancer", "Tenacious, highly imaginative, and loyal."
+    elif (month == 7 and day >= 23) or (month == 8 and day <= 22):
+        return "Leo", "Creative, passionate, and cheerful."
+    elif (month == 8 and day >= 23) or (month == 9 and day <= 22):
+        return "Virgo", "Loyal, analytical, and hardworking."
+    elif (month == 9 and day >= 23) or (month == 10 and day <= 22):
+        return "Libra", "Cooperative, diplomatic, and fair-minded."
+    elif (month == 10 and day >= 23) or (month == 11 and day <= 21):
+        return "Scorpio", "Resourceful, brave, and passionate."
+    elif (month == 11 and day >= 22) or (month == 12 and day <= 21):
+        return "Sagittarius", "Generous, idealistic, and great sense of humor."
+    elif (month == 12 and day >= 22) or (month == 1 and day <= 19):
+        return "Capricorn", "Responsible, disciplined, and self-control."
+    elif (month == 1 and day >= 20) or (month == 2 and day <= 18):
+        return "Aquarius", "Progressive, original, and independent."
+    elif (month == 2 and day >= 19) or (month == 3 and day <= 20):
+        return "Pisces", "Compassionate, artistic, and intuitive."
 
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('projectwithme')
+    return None, None
 
-def get_sales_data():
-    """
-    Get sales figures input from the user.
-    Run a while loop to collect a valid string of data from the user
-    via the terminal, which must be a string of 6 numbers separated
-    by commas. The loop will repeatedly request data, until it is valid.
-    """
-    while True:
-        print("Please enter sales data from the last market.")
-        print("Data should be six numbers, separated by commas.")
-        print("Example: 10,20,30,40,50,60\n")
+def play_zodiac_game():
+    print("Welcome to the Zodiac Sign Game!")
+    print("Please enter your birthdate to find out your zodiac sign.")
 
-        data_str = input("Enter your data here:\n")
-
-        sales_data = data_str.split(",")
-
-        if validate_data(sales_data):
-            print("Data is valid!")
-            break
-
-    return sales_data
-
-
-def validate_data(values):
-    """
-    Inside the try, converts all string values into integers.
-    Raises ValueError if strings cannot be converted into int,
-    or if there aren't exactly 6 values.
-    """
-    try:
-        [int(value) for value in values]
-        if len(values) != 6:
-            raise ValueError(
-                f"Exactly 6 values required, you provided {len(values)}"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
-
-    return True
-
-
-def update_worksheet(data, worksheet):
-    """
-    Receives a list of integers to be inserted into a worksheet
-    Update the relevant worksheet with the data provided
-    """
-    print(f"Updating {worksheet} worksheet...\n")
-    worksheet_to_update = SHEET.worksheet(worksheet)
-    worksheet_to_update.append_row(data)
-    print(f"{worksheet} worksheet updated successfully\n")
-
-
-def calculate_surplus_data(sales_row):
-    """
-    Compare sales with stock and calculate the surplus for each item type.
-
-    The surplus is defined as the sales figure subtracted from the stock:
-    - Positive surplus indicates waste
-    - Negative surplus indicates extra made when stock was sold out.
-    """
-    print("Calculating surplus data...\n")
-    stock = SHEET.worksheet("stock").get_all_values()
-    stock_row = stock[-1]
+    # Get user's birthdate
+    birthdate_str = input("Enter your birthdate (YYYY-MM-DD): ")
     
-    surplus_data = []
-    for stock, sales in zip(stock_row, sales_row):
-        surplus = int(stock) - sales
-        surplus_data.append(surplus)
+    # Convert the input to a date object
+    try:
+        birthdate = datetime.strptime(birthdate_str, "%Y-%m-%d")
+    except ValueError:
+        print("Invalid date format. Please enter the date in YYYY-MM-DD format.")
+        return
 
-    return surplus_data
+    # Get day and month from the birthdate
+    day = birthdate.day
+    month = birthdate.month
 
+    # Determine the zodiac sign
+    sign, description = get_zodiac_sign(day, month)
+    
+    if sign:
+        print(f"\nYour zodiac sign is {sign}!")
+        print(f"Description: {description}")
+    else:
+        print("Sorry, we couldn't determine your zodiac sign. Please try again.")
 
-def get_last_5_entries_sales():
-    """
-    Collects columns of data from sales worksheet, collecting
-    the last 5 entries for each sandwich and returns the data
-    as a list of lists.
-    """
-    sales = SHEET.worksheet("sales")
+    # Ask if the user wants to play again
+    play_again = input("\nWould you like to find another zodiac sign? (yes/no): ").strip().lower()
+    if play_again == 'yes':
+        play_zodiac_game()
+    else:
+        print("Thanks for playing! Goodbye!")
 
-    columns = []
-    for ind in range(1, 7):
-        column = sales.col_values(ind)
-        columns.append(column[-5:])
-
-    return columns
-
-
-def calculate_stock_data(data):
-    """
-    Calculate the average stock for each item type, adding 10%
-    """
-    print("Calculating stock data...\n")
-    new_stock_data = []
-
-    for column in data:
-        int_column = [int(num) for num in column]
-        average = sum(int_column) / len(int_column)
-        stock_num = average * 1.1
-        new_stock_data.append(round(stock_num))
-
-    return new_stock_data
-
-
-def main():
-    """
-    Run all program functions
-    """
-    data = get_sales_data()
-    sales_data = [int(num) for num in data]
-    update_worksheet(sales_data, "sales")
-    new_surplus_data = calculate_surplus_data(sales_data)
-    update_worksheet(new_surplus_data, "surplus")
-    sales_columns = get_last_5_entries_sales()
-    stock_data = calculate_stock_data(sales_columns)
-    update_worksheet(stock_data, "stock")
-
-
-print("Welcome to Love Sandwiches Data Automation")
-main()
+if __name__ == "__main__":
+    play_zodiac_game()
