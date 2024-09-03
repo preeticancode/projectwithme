@@ -1,6 +1,10 @@
 import sys
 from datetime import datetime
 import pyfiglet
+from colorama import init, Fore, Style
+
+# Initialize colorama for color support
+init()
 
 # Function to get the zodiac sign based on the birthdate
 def get_zodiac_sign(day, month):
@@ -31,22 +35,44 @@ def get_zodiac_sign(day, month):
     
     return None, None
 
+# Function to ask a Zodiac quiz
+def zodiac_quiz():
+    print(Fore.CYAN + "\nZodiac Quiz: Let's see how well you know the Zodiac signs!" + Style.RESET_ALL)
+    
+    questions = {
+        "Which Zodiac sign is known for being adventurous?": "sagittarius",
+        "Which Zodiac sign is known for being stubborn?": "taurus",
+        "Which Zodiac sign is symbolized by the twins?": "gemini",
+        "Which Zodiac sign is the most artistic?": "pisces"
+    }
+    
+    score = 0
+    for question, correct_answer in questions.items():
+        answer = input(Fore.YELLOW + question + " ").lower().strip()
+        if answer == correct_answer:
+            print(Fore.GREEN + "Correct!" + Style.RESET_ALL)
+            score += 1
+        else:
+            print(Fore.RED + f"Wrong! The correct answer was {correct_answer.capitalize()}." + Style.RESET_ALL)
+    
+    print(Fore.CYAN + f"\nYou got {score} out of {len(questions)} correct!" + Style.RESET_ALL)
+
 # Main game loop function
 def play_zodiac_game():
     # Use pyfiglet to create a fancy welcome message
     ascii_banner = pyfiglet.figlet_format("Welcome to Zodiac With Me")
-    print(ascii_banner)
+    print(Fore.MAGENTA + ascii_banner + Style.RESET_ALL)
     
-    print("Please enter your birthdate to find out your zodiac sign.")
+    print(Fore.CYAN + "Please enter your birthdate to find out your zodiac sign." + Style.RESET_ALL)
     
     # Get user's birthdate
-    birthdate_str = input("Enter your birthdate (YYYY-MM-DD): ")
+    birthdate_str = input(Fore.YELLOW + "Enter your birthdate (YYYY-MM-DD): " + Style.RESET_ALL)
     
     # Convert the input to a date object
     try:
         birthdate = datetime.strptime(birthdate_str, "%Y-%m-%d")
     except ValueError:
-        print("Invalid date format. Please enter the date in YYYY-MM-DD format.")
+        print(Fore.RED + "Invalid date format. Please enter the date in YYYY-MM-DD format." + Style.RESET_ALL)
         return
     
     # Get day and month from the birthdate
@@ -57,17 +83,22 @@ def play_zodiac_game():
     sign, description = get_zodiac_sign(day, month)
     
     if sign:
-        print(f"\nYour zodiac sign is {sign}!")
-        print(f"Description: {description}")
+        print(Fore.GREEN + f"\nYour zodiac sign is {sign}!" + Style.RESET_ALL)
+        print(Fore.CYAN + f"Description: {description}" + Style.RESET_ALL)
     else:
-        print("Sorry, we couldn't determine your zodiac sign. Please try again.")
+        print(Fore.RED + "Sorry, we couldn't determine your zodiac sign. Please try again." + Style.RESET_ALL)
+    
+    # Ask if the user wants to take the quiz
+    take_quiz = input(Fore.YELLOW + "\nWould you like to take a Zodiac quiz? (yes/no): " + Style.RESET_ALL).strip().lower()
+    if take_quiz == 'yes':
+        zodiac_quiz()
     
     # Ask if the user wants to play again
-    play_again = input("\nWould you like to find another zodiac sign? (yes/no): ").strip().lower()
+    play_again = input(Fore.YELLOW + "\nWould you like to find another zodiac sign? (yes/no): " + Style.RESET_ALL).strip().lower()
     if play_again == 'yes':
         play_zodiac_game()
     else:
-        print("Thanks for playing! Goodbye!")
+        print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
 
 if __name__ == "__main__":
     play_zodiac_game()
