@@ -78,13 +78,9 @@ def zodiac_quiz():
     
     print(Fore.CYAN + f"\nYou got {score} out of {len(selected_questions)} correct!" + Style.RESET_ALL)
 
-# Main game loop function
-def play_zodiac_game():
+# Function to find the zodiac sign based on birthdate
+def zodiac_game():
     clear()  # Clear the terminal at the start of the game
-    # Use pyfiglet to create a fancy welcome message
-    ascii_banner = pyfiglet.figlet_format("Welcome to Zodiac With Me")
-    print(Fore.MAGENTA + ascii_banner + Style.RESET_ALL)
-    
     print(Fore.CYAN + "Please enter your birthdate to find out your zodiac sign." + Style.RESET_ALL)
     
     # Get user's birthdate
@@ -109,18 +105,31 @@ def play_zodiac_game():
         print(Fore.CYAN + f"Description: {description}" + Style.RESET_ALL)
     else:
         print(Fore.RED + "Sorry, we couldn't determine your zodiac sign. Please try again." + Style.RESET_ALL)
+
+# Main menu function
+def main_menu():
+    clear()  # Clear the terminal at the start of the menu
+    # Use pyfiglet to create a fancy welcome message
+    ascii_banner = pyfiglet.figlet_format("Welcome to Zodiac With Me")
+    print(Fore.MAGENTA + ascii_banner + Style.RESET_ALL)
     
-    # Ask if the user wants to take the quiz
-    take_quiz = input(Fore.YELLOW + "\nWould you like to take a Zodiac quiz? (yes/no): " + Style.RESET_ALL).strip().lower()
-    if take_quiz == 'yes':
+    print(Fore.CYAN + "Please choose an option:" + Style.RESET_ALL)
+    print(Fore.YELLOW + "1. Find Your Zodiac Sign" + Style.RESET_ALL)
+    print(Fore.YELLOW + "2. Take a Zodiac Quiz" + Style.RESET_ALL)
+    print(Fore.YELLOW + "3. Exit" + Style.RESET_ALL)
+    
+    choice = input(Fore.CYAN + "\nEnter your choice (1/2/3): " + Style.RESET_ALL).strip()
+    
+    if choice == '1':
+        zodiac_game()
+    elif choice == '2':
         zodiac_quiz()
-    
-    # Ask if the user wants to play again
-    play_again = input(Fore.YELLOW + "\nWould you like to find another zodiac sign? (yes/no): " + Style.RESET_ALL).strip().lower()
-    if play_again == 'yes':
-        play_zodiac_game()
+    elif choice == '3':
+        print(Fore.MAGENTA + "Thanks for visiting! Goodbye!" + Style.RESET_ALL)
+        sys.exit()
     else:
-        print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
+        print(Fore.RED + "Invalid choice. Please select a valid option." + Style.RESET_ALL)
+        main_menu()
 
 if __name__ == "__main__":
-    play_zodiac_game()
+    main_menu()
