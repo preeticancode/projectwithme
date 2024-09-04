@@ -105,6 +105,14 @@ def zodiac_game():
         print(Fore.CYAN + f"Description: {description}" + Style.RESET_ALL)
     else:
         print(Fore.RED + "Sorry, we couldn't determine your zodiac sign. Please try again." + Style.RESET_ALL)
+    
+    # Ask if the user wants to play again or exit
+    play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " + Style.RESET_ALL).strip().lower()
+    if play_again == 'play':
+        main_menu()
+    else:
+        print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
+        sys.exit()
 
 # Main menu function
 def main_menu():
@@ -124,6 +132,13 @@ def main_menu():
         zodiac_game()
     elif choice == '2':
         zodiac_quiz()
+        # After the quiz, ask if the user wants to play again or exit
+        play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " + Style.RESET_ALL).strip().lower()
+        if play_again == 'play':
+            main_menu()
+        else:
+            print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
+            sys.exit()
     elif choice == '3':
         print(Fore.MAGENTA + "Thanks for visiting! Goodbye!" + Style.RESET_ALL)
         sys.exit()
@@ -133,3 +148,4 @@ def main_menu():
 
 if __name__ == "__main__":
     main_menu()
+
