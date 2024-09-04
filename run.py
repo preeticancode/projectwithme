@@ -2,9 +2,19 @@ import sys
 from datetime import datetime
 import pyfiglet
 from colorama import init, Fore, Style
+import os
 
 # Initialize colorama for color support
 init()
+
+# Clear function to clean up the terminal
+def clear():
+    # For Windows
+    if os.name == 'nt':
+        os.system('cls')
+    # For macOS and Linux
+    else:
+        os.system('clear')
 
 # Function to get the zodiac sign based on the birthdate
 def get_zodiac_sign(day, month):
@@ -37,6 +47,7 @@ def get_zodiac_sign(day, month):
 
 # Function to ask a Zodiac quiz
 def zodiac_quiz():
+    clear()  # Clear the terminal before starting the quiz
     print(Fore.CYAN + "\nZodiac Quiz: Let's see how well you know the Zodiac signs!" + Style.RESET_ALL)
     
     questions = {
@@ -59,6 +70,7 @@ def zodiac_quiz():
 
 # Main game loop function
 def play_zodiac_game():
+    clear()  # Clear the terminal at the start of the game
     # Use pyfiglet to create a fancy welcome message
     ascii_banner = pyfiglet.figlet_format("Welcome to Zodiac With Me")
     print(Fore.MAGENTA + ascii_banner + Style.RESET_ALL)
