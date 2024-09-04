@@ -3,6 +3,7 @@ from datetime import datetime
 import pyfiglet
 from colorama import init, Fore, Style
 import os
+import random
 
 # Initialize colorama for color support
 init()
@@ -54,11 +55,20 @@ def zodiac_quiz():
         "Which Zodiac sign is known for being adventurous?": "sagittarius",
         "Which Zodiac sign is known for being stubborn?": "taurus",
         "Which Zodiac sign is symbolized by the twins?": "gemini",
-        "Which Zodiac sign is the most artistic?": "pisces"
+        "Which Zodiac sign is the most artistic?": "pisces",
+        "Which Zodiac sign is associated with the lion?": "leo",
+        "Which Zodiac sign is known for being analytical?": "virgo",
+        "Which Zodiac sign is represented by the scales?": "libra",
+        "Which Zodiac sign is known for being emotional and nurturing?": "cancer",
+        "Which Zodiac sign is symbolized by the ram?": "aries",
+        "Which Zodiac sign is known for being independent and original?": "aquarius"
     }
     
+    # Randomly select 5 questions
+    selected_questions = random.sample(list(questions.items()), 5)
+    
     score = 0
-    for question, correct_answer in questions.items():
+    for question, correct_answer in selected_questions:
         answer = input(Fore.YELLOW + question + " ").lower().strip()
         if answer == correct_answer:
             print(Fore.GREEN + "Correct!" + Style.RESET_ALL)
@@ -66,7 +76,7 @@ def zodiac_quiz():
         else:
             print(Fore.RED + f"Wrong! The correct answer was {correct_answer.capitalize()}." + Style.RESET_ALL)
     
-    print(Fore.CYAN + f"\nYou got {score} out of {len(questions)} correct!" + Style.RESET_ALL)
+    print(Fore.CYAN + f"\nYou got {score} out of {len(selected_questions)} correct!" + Style.RESET_ALL)
 
 # Main game loop function
 def play_zodiac_game():
