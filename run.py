@@ -105,13 +105,17 @@ def zodiac_game():
     else:
         print(Fore.RED + "Sorry, we couldn't determine your zodiac sign. Please try again." + Style.RESET_ALL)
     
-    # Ask if the user wants to play again or exit
-    play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " + Style.RESET_ALL).strip().lower()
-    if play_again == 'play':
-        main_menu()
-    else:
-        print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
-        sys.exit()
+    # Ask if the user wants to play again or exit with validation
+    while True:
+        play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " + Style.RESET_ALL).strip().lower()
+        if play_again == 'play':
+            main_menu()
+            break
+        elif play_again == 'exit':
+            print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
+            sys.exit()
+        else:
+            print(Fore.RED + "Invalid input. Please enter 'play' or 'exit'." + Style.RESET_ALL)
 
 # Main menu function with input validation
 def main_menu():
@@ -134,13 +138,17 @@ def main_menu():
             break
         elif choice == '2':
             zodiac_quiz()
-            # After the quiz, ask if the user wants to play again or exit
-            play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " + Style.RESET_ALL).strip().lower()
-            if play_again == 'play':
-                main_menu()
-            else:
-                print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
-                sys.exit()
+            # After the quiz, ask if the user wants to play again or exit with validation
+            while True:
+                play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " + Style.RESET_ALL).strip().lower()
+                if play_again == 'play':
+                    main_menu()
+                    break
+                elif play_again == 'exit':
+                    print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
+                    sys.exit()
+                else:
+                    print(Fore.RED + "Invalid input. Please enter 'play' or 'exit'." + Style.RESET_ALL)
             break
         elif choice == '3':
             print(Fore.MAGENTA + "Thanks for visiting! Goodbye!" + Style.RESET_ALL)
