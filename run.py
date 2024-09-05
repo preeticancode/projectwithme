@@ -108,7 +108,7 @@ def zodiac_game():
         print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
         sys.exit()
 
-# Main menu function
+# Main menu function with input validation
 def main_menu():
     clear()  # Clear the terminal at the start of the menu
     # Use pyfiglet to create a fancy welcome message
@@ -119,26 +119,30 @@ def main_menu():
     print(Fore.YELLOW + "1. Find Your Zodiac Sign" + Style.RESET_ALL)
     print(Fore.YELLOW + "2. Take a Zodiac Quiz" + Style.RESET_ALL)
     print(Fore.YELLOW + "3. Exit" + Style.RESET_ALL)
-    
-    choice = input(Fore.CYAN + "\nEnter your choice (1/2/3): " + Style.RESET_ALL).strip()
-    
-    if choice == '1':
-        zodiac_game()
-    elif choice == '2':
-        zodiac_quiz()
-        # After the quiz, ask if the user wants to play again or exit
-        play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " + Style.RESET_ALL).strip().lower()
-        if play_again == 'play':
-            main_menu()
-        else:
-            print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
+
+    # Loop until valid input is given
+    while True:
+        choice = input(Fore.CYAN + "\nEnter your choice (1/2/3): " + Style.RESET_ALL).strip()
+        
+        if choice == '1':
+            zodiac_game()
+            break
+        elif choice == '2':
+            zodiac_quiz()
+            # After the quiz, ask if the user wants to play again or exit
+            play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " + Style.RESET_ALL).strip().lower()
+            if play_again == 'play':
+                main_menu()
+            else:
+                print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
+                sys.exit()
+            break
+        elif choice == '3':
+            print(Fore.MAGENTA + "Thanks for visiting! Goodbye!" + Style.RESET_ALL)
             sys.exit()
-    elif choice == '3':
-        print(Fore.MAGENTA + "Thanks for visiting! Goodbye!" + Style.RESET_ALL)
-        sys.exit()
-    else:
-        print(Fore.RED + "Invalid choice. Please select a valid option." + Style.RESET_ALL)
-        main_menu()
+        else:
+            # Invalid input, show error message and ask again
+            print(Fore.RED + "Invalid choice. Please select option 1, 2, or 3." + Style.RESET_ALL)
 
 # Main function to start the game
 if __name__ == "__main__":
