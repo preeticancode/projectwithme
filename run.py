@@ -19,30 +19,24 @@ def clear():
 
 # Function to get the zodiac sign based on the birthdate
 def get_zodiac_sign(day, month):
-    if (month == 3 and day >= 21) or (month == 4 and day <= 19):
-        return "Aries", "Courageous, determined, and confident."
-    elif (month == 4 and day >= 20) or (month == 5 and day <= 20):
-        return "Taurus", "Reliable, patient, and devoted."
-    elif (month == 5 and day >= 21) or (month == 6 and day <= 20):
-        return "Gemini", "Gentle, affectionate, and curious."
-    elif (month == 6 and day >= 21) or (month == 7 and day <= 22):
-        return "Cancer", "Tenacious, highly imaginative, and loyal."
-    elif (month == 7 and day >= 23) or (month == 8 and day <= 22):
-        return "Leo", "Creative, passionate, and cheerful."
-    elif (month == 8 and day >= 23) or (month == 9 and day <= 22):
-        return "Virgo", "Loyal, analytical, and hardworking."
-    elif (month == 9 and day >= 23) or (month == 10 and day <= 22):
-        return "Libra", "Cooperative, diplomatic, and fair-minded."
-    elif (month == 10 and day >= 23) or (month == 11 and day <= 21):
-        return "Scorpio", "Resourceful, brave, and passionate."
-    elif (month == 11 and day >= 22) or (month == 12 and day <= 21):
-        return "Sagittarius", "Generous, idealistic, and great sense of humor."
-    elif (month == 12 and day >= 22) or (month == 1 and day <= 19):
-        return "Capricorn", "Responsible, disciplined, and self-control."
-    elif (month == 1 and day >= 20) or (month == 2 and day <= 18):
-        return "Aquarius", "Progressive, original, and independent."
-    elif (month == 2 and day >= 19) or (month == 3 and day <= 20):
-        return "Pisces", "Compassionate, artistic, and intuitive."
+    zodiac_signs = [
+        (3, 21, 4, 19, "Aries", "Courageous, determined, and confident."),
+        (4, 20, 5, 20, "Taurus", "Reliable, patient, and devoted."),
+        (5, 21, 6, 20, "Gemini", "Gentle, affectionate, and curious."),
+        (6, 21, 7, 22, "Cancer", "Tenacious, highly imaginative, and loyal."),
+        (7, 23, 8, 22, "Leo", "Creative, passionate, and cheerful."),
+        (8, 23, 9, 22, "Virgo", "Loyal, analytical, and hardworking."),
+        (9, 23, 10, 22, "Libra", "Cooperative, diplomatic, and fair-minded."),
+        (10, 23, 11, 21, "Scorpio", "Resourceful, brave, and passionate."),
+        (11, 22, 12, 21, "Sagittarius", "Generous, idealistic, and humorous."),
+        (12, 22, 1, 19, "Capricorn", "Responsible, disciplined, and self-controlled."),
+        (1, 20, 2, 18, "Aquarius", "Progressive, original, and independent."),
+        (2, 19, 3, 20, "Pisces", "Compassionate, artistic, and intuitive.")
+    ]
+    
+    for z in zodiac_signs:
+        if (month == z[0] and day >= z[1]) or (month == z[2] and day <= z[3]):
+            return z[4], z[5]
     
     return None, None
 
@@ -146,6 +140,6 @@ def main_menu():
         print(Fore.RED + "Invalid choice. Please select a valid option." + Style.RESET_ALL)
         main_menu()
 
+# Main function to start the game
 if __name__ == "__main__":
     main_menu()
-
