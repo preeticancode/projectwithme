@@ -87,11 +87,18 @@ def zodiac_game():
             break  # Exit the loop when valid date is entered
         except ValueError:
             print(Fore.RED + "Invalid date format. Please enter the date in YYYY-MM-DD format." + Style.RESET_ALL)
-            retry = input(Fore.YELLOW + "Would you like to retry? (yes/no): " + Style.RESET_ALL).strip().lower()
-            if retry != 'yes':
-                print(Fore.MAGENTA + "Returning to the main menu." + Style.RESET_ALL)
-                return
-    
+            
+            # Retry loop for valid input (yes or no)
+            while True:
+                retry = input(Fore.YELLOW + "Would you like to retry? (yes/no): " + Style.RESET_ALL).strip().lower()
+                if retry == 'yes':
+                    break  # Continue with the loop to retry the date input
+                elif retry == 'no':
+                    print(Fore.MAGENTA + "Returning to the main menu." + Style.RESET_ALL)
+                    return  # Exit to main menu
+                else:
+                    print(Fore.RED + "Invalid input. Please enter 'yes' or 'no'." + Style.RESET_ALL)
+
     # Get day and month from the birthdate
     day = birthdate.day
     month = birthdate.month
