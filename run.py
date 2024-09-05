@@ -77,15 +77,20 @@ def zodiac_game():
     clear()  # Clear the terminal at the start of the game
     print(Fore.CYAN + "Please enter your birthdate to find out your zodiac sign." + Style.RESET_ALL)
     
-    # Get user's birthdate
-    birthdate_str = input(Fore.YELLOW + "Enter your birthdate (YYYY-MM-DD): " + Style.RESET_ALL)
-    
-    # Convert the input to a date object
-    try:
-        birthdate = datetime.strptime(birthdate_str, "%Y-%m-%d")
-    except ValueError:
-        print(Fore.RED + "Invalid date format. Please enter the date in YYYY-MM-DD format." + Style.RESET_ALL)
-        return
+    while True:  # Loop until valid date format is entered
+        # Get user's birthdate
+        birthdate_str = input(Fore.YELLOW + "Enter your birthdate (YYYY-MM-DD): " + Style.RESET_ALL)
+        
+        # Convert the input to a date object
+        try:
+            birthdate = datetime.strptime(birthdate_str, "%Y-%m-%d")
+            break  # Exit the loop when valid date is entered
+        except ValueError:
+            print(Fore.RED + "Invalid date format. Please enter the date in YYYY-MM-DD format." + Style.RESET_ALL)
+            retry = input(Fore.YELLOW + "Would you like to retry? (yes/no): " + Style.RESET_ALL).strip().lower()
+            if retry != 'yes':
+                print(Fore.MAGENTA + "Returning to the main menu." + Style.RESET_ALL)
+                return
     
     # Get day and month from the birthdate
     day = birthdate.day
