@@ -10,7 +10,7 @@ init()
 
 
 def clear():
-    """Clear the terminal screen."""
+    """Clear the terminal screen depending on the OS."""
     if os.name == 'nt':
         os.system('cls')
     else:
@@ -18,7 +18,16 @@ def clear():
 
 
 def get_zodiac_sign(day, month):
-    """Return the zodiac sign and description based on birthdate."""
+    """
+    Determine the zodiac sign based on the provided day and month.
+
+    Args:
+        day (int): The day of the month.
+        month (int): The month (1-12).
+
+    Returns:
+        tuple: A tuple containing the zodiac sign and its description.
+    """
     zodiac_signs = [
         (3, 21, 4, 19, "Aries", "Courageous, determined, and confident."),
         (4, 20, 5, 20, "Taurus", "Reliable, patient, and devoted."),
@@ -42,7 +51,12 @@ def get_zodiac_sign(day, month):
 
 
 def zodiac_quiz():
-    """Run a quiz on Zodiac signs."""
+    """
+    Run a quiz on Zodiac signs where users answer questions about Zodiac traits.
+
+    The quiz randomly selects 5 questions from a predefined set of Zodiac-related questions.
+    Each correct answer increments the user's score, and the score is displayed at the end.
+    """
     clear()  # Clear the terminal before starting the quiz
     print(Fore.CYAN + "\nZodiac Quiz: Let's see how well you know the Zodiac signs!" +
           Style.RESET_ALL)
@@ -85,7 +99,12 @@ def zodiac_quiz():
 
 
 def zodiac_game():
-    """Play the Zodiac Sign game."""
+    """
+    Play a game to find out the user's Zodiac sign based on their birthdate.
+
+    The user is asked to input their birthdate in 'YYYY-MM-DD' format, and the Zodiac sign
+    is determined using their birth month and day.
+    """
     clear()  # Clear the terminal at the start of the game
     print(Fore.CYAN + "Please enter your birthdate to find out your zodiac sign." +
           Style.RESET_ALL)
@@ -147,7 +166,13 @@ def zodiac_game():
 
 
 def main_menu():
-    """Display the main menu and handle user selection."""
+    """
+    Display the main menu and handle user input.
+
+    The user can choose between two options:
+        1. Find their zodiac sign.
+        2. Take a quiz about zodiac signs.
+    """
     clear()  # Clear the terminal at the start of the menu
     ascii_banner = pyfiglet.figlet_format("Welcome to Zodiac With Me")
     print(Fore.MAGENTA + ascii_banner + Style.RESET_ALL)
