@@ -155,10 +155,9 @@ def main_menu():
     print(Fore.CYAN + "Please choose an option:" + Style.RESET_ALL)
     print(Fore.YELLOW + "1. Find Your Zodiac Sign" + Style.RESET_ALL)
     print(Fore.YELLOW + "2. Take a Zodiac Quiz" + Style.RESET_ALL)
-    print(Fore.YELLOW + "3. Exit" + Style.RESET_ALL)
 
     while True:
-        choice = input(Fore.CYAN + "\nEnter your choice (1/2/3): " + Style.RESET_ALL).strip()
+        choice = input(Fore.CYAN + "\nEnter your choice (1/2): " + Style.RESET_ALL).strip()
 
         if choice == '1':
             zodiac_game()
@@ -179,11 +178,8 @@ def main_menu():
                     print(Fore.RED + "Invalid input. Please enter 'quiz' or 'menu'." +
                           Style.RESET_ALL)
             break
-        elif choice == '3':
-            print(Fore.MAGENTA + "Returning to the main menu..." + Style.RESET_ALL)
-            main_menu()  # Return to the main menu instead of exiting
         else:
-            print(Fore.RED + "Invalid choice. Please select option 1, 2, or 3." +
+            print(Fore.RED + "Invalid choice. Please select option 1 or 2." +
                   Style.RESET_ALL)
 
 
