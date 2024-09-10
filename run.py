@@ -110,8 +110,9 @@ def zodiac_game():
                 if retry == 'yes':
                     break
                 elif retry == 'no':
-                    print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
-                    sys.exit()
+                    print(Fore.MAGENTA + "Returning to the main menu..." + Style.RESET_ALL)
+                    main_menu()
+                    return  # Return to the main menu
                 else:
                     print(Fore.RED + "Invalid input. Please enter 'yes' or 'no'." +
                           Style.RESET_ALL)
@@ -130,18 +131,19 @@ def zodiac_game():
         print(Fore.RED + "Sorry, we couldn't determine your zodiac sign. Please try again." +
               Style.RESET_ALL)
 
-    # Ask if the user wants to play again or exit with validation
+    # Ask if the user wants to play again or return to the main menu
     while True:
-        play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " +
+        play_again = input(Fore.YELLOW + "\nWould you like to play again or return to the main menu? (play/menu): " +
                           Style.RESET_ALL).strip().lower()
         if play_again == 'play':
+            zodiac_game()
+            break
+        elif play_again == 'menu':
+            print(Fore.MAGENTA + "Returning to the main menu..." + Style.RESET_ALL)
             main_menu()
             break
-        elif play_again == 'exit':
-            print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
-            sys.exit()
         else:
-            print(Fore.RED + "Invalid input. Please enter 'play' or 'exit'." + Style.RESET_ALL)
+            print(Fore.RED + "Invalid input. Please enter 'play' or 'menu'." + Style.RESET_ALL)
 
 
 def main_menu():
@@ -164,21 +166,22 @@ def main_menu():
         elif choice == '2':
             zodiac_quiz()
             while True:
-                play_again = input(Fore.YELLOW + "\nWould you like to play again or exit? (play/exit): " +
+                play_again = input(Fore.YELLOW + "\nWould you like to take the quiz again or return to the main menu? (quiz/menu): " +
                                   Style.RESET_ALL).strip().lower()
-                if play_again == 'play':
+                if play_again == 'quiz':
+                    zodiac_quiz()
+                    continue
+                elif play_again == 'menu':
+                    print(Fore.MAGENTA + "Returning to the main menu..." + Style.RESET_ALL)
                     main_menu()
                     break
-                elif play_again == 'exit':
-                    print(Fore.MAGENTA + "Thanks for playing! Goodbye!" + Style.RESET_ALL)
-                    sys.exit()
                 else:
-                    print(Fore.RED + "Invalid input. Please enter 'play' or 'exit'." +
+                    print(Fore.RED + "Invalid input. Please enter 'quiz' or 'menu'." +
                           Style.RESET_ALL)
             break
         elif choice == '3':
-            print(Fore.MAGENTA + "Thanks for visiting! Goodbye!" + Style.RESET_ALL)
-            sys.exit()
+            print(Fore.MAGENTA + "Returning to the main menu..." + Style.RESET_ALL)
+            main_menu()  # Return to the main menu instead of exiting
         else:
             print(Fore.RED + "Invalid choice. Please select option 1, 2, or 3." +
                   Style.RESET_ALL)
