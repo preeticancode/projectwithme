@@ -1,15 +1,14 @@
+import os
 import sys
+import random
 from datetime import datetime
 import pyfiglet
 from colorama import init, Fore, Style
-import os
-import random
 
 # Initialize colorama for color support
 init()
 
 
-# Clear function to clean up the terminal
 def clear():
     """Clear the terminal screen."""
     if os.name == 'nt':
@@ -18,7 +17,6 @@ def clear():
         os.system('clear')
 
 
-# Function to get the zodiac sign based on the birthdate
 def get_zodiac_sign(day, month):
     """Return the zodiac sign and description based on birthdate."""
     zodiac_signs = [
@@ -43,7 +41,6 @@ def get_zodiac_sign(day, month):
     return None, None
 
 
-# Function to ask a Zodiac quiz
 def zodiac_quiz():
     """Run a quiz on Zodiac signs."""
     clear()  # Clear the terminal before starting the quiz
@@ -68,7 +65,14 @@ def zodiac_quiz():
 
     score = 0
     for question, correct_answer in selected_questions:
-        answer = input(Fore.YELLOW + question + " ").lower().strip()
+        while True:
+            answer = input(Fore.YELLOW + question + " ").lower().strip()
+            if answer:  # Check if the input is not blank
+                break
+            else:
+                print(Fore.RED + "Answer cannot be blank. Please enter a valid answer." +
+                      Style.RESET_ALL)
+
         if answer == correct_answer:
             print(Fore.GREEN + "Correct!" + Style.RESET_ALL)
             score += 1
@@ -80,7 +84,6 @@ def zodiac_quiz():
           Style.RESET_ALL)
 
 
-# Function to find the zodiac sign based on birthdate
 def zodiac_game():
     """Play the Zodiac Sign game."""
     clear()  # Clear the terminal at the start of the game
@@ -141,7 +144,6 @@ def zodiac_game():
             print(Fore.RED + "Invalid input. Please enter 'play' or 'exit'." + Style.RESET_ALL)
 
 
-# Main menu function with input validation
 def main_menu():
     """Display the main menu and handle user selection."""
     clear()  # Clear the terminal at the start of the menu
@@ -182,6 +184,5 @@ def main_menu():
                   Style.RESET_ALL)
 
 
-# Main function to start the game
 if __name__ == "__main__":
     main_menu()
