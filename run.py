@@ -179,7 +179,8 @@ def zodiac_game():
     else:
         print(
             Fore.RED +
-            "Sorry, we couldn't determine your zodiac sign. Please try again." +
+            "Sorry, we couldn't determine your zodiac sign."
+            "Please try again." +
             Style.RESET_ALL)
 
     # Ask if the user wants to play again or return to the main menu
