@@ -38,7 +38,8 @@ def get_zodiac_sign(day, month):
         (9, 23, 10, 22, "Libra", "Cooperative, diplomatic, and fair-minded."),
         (10, 23, 11, 21, "Scorpio", "Resourceful, brave, and passionate."),
         (11, 22, 12, 21, "Sagittarius", "Generous, idealistic, and humorous."),
-        (12, 22, 1, 19, "Capricorn", "Responsible, disciplined, and self-controlled."),
+        (12, 22, 1, 19, "Capricorn",
+         "Responsible, disciplined, and self-controlled."),
         (1, 20, 2, 18, "Aquarius", "Progressive, original, and independent."),
         (2, 19, 3, 20, "Pisces", "Compassionate, artistic, and intuitive.")
     ]
@@ -52,10 +53,13 @@ def get_zodiac_sign(day, month):
 
 def zodiac_quiz():
     """
-    Run a quiz on Zodiac signs where users answer questions about Zodiac traits.
+    Run a quiz on Zodiac signs where users
+    answer questions about Zodiac traits.
 
-    The quiz randomly selects 5 questions from a predefined set of Zodiac-related questions.
-    Each correct answer increments the user's score, and the score is displayed at the end.
+    The quiz randomly selects 5 questions from
+    a predefined set of Zodiac-related questions.
+    Each correct answer increments the user's score,
+    and the score is displayed at the end.
     """
     clear()  # Clear the terminal before starting the quiz
     print(
@@ -71,9 +75,11 @@ def zodiac_quiz():
         "Which Zodiac sign is associated with the lion?": "leo",
         "Which Zodiac sign is known for being analytical?": "virgo",
         "Which Zodiac sign is represented by the scales?": "libra",
-        "Which Zodiac sign is known for being emotional and nurturing?": "cancer",
+        "Which Zodiac sign is known for being emotional and nurturing?":
+            "cancer",
         "Which Zodiac sign is symbolized by the ram?": "aries",
-        "Which Zodiac sign is known for being independent and original?": "aquarius"}
+        "Which Zodiac sign is known for being independent and original?":
+            "aquarius"}
 
     # Randomly select 5 questions
     selected_questions = random.sample(list(questions.items()), 5)
@@ -111,7 +117,8 @@ def zodiac_game():
     """
     Play a game to find out the user's Zodiac sign based on their birthdate.
 
-    The user is asked to input their birthdate in 'YYYY-MM-DD' format, and the Zodiac sign
+    The user is asked to input their birthdate in 'YYYY-MM-DD' format,
+    and the Zodiac sign
     is determined using their birth month and day.
     """
     clear()  # Clear the terminal at the start of the game
@@ -134,7 +141,8 @@ def zodiac_game():
         except ValueError:
             print(
                 Fore.RED +
-                "Invalid date format. Please enter the date in YYYY-MM-DD format." +
+                "Invalid date format. Please enter the date in"
+                "YYYY-MM-DD format." +
                 Style.RESET_ALL)
 
             # Retry loop for valid input (yes or no)
