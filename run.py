@@ -187,7 +187,8 @@ def zodiac_game():
     while True:
         play_again = input(
             Fore.YELLOW +
-            "\nWould you like to play again or return to the main menu? (play/menu): " +
+            "\nWould you like to play again or return to the main menu? "
+            "(play/menu): " +
             Style.RESET_ALL).strip().lower()
         if play_again == 'play':
             zodiac_game()
@@ -236,7 +237,9 @@ def main_menu():
             while True:
                 play_again = input(
                     Fore.YELLOW +
-                    "\nWould you like to take the quiz again or return to the main menu? (quiz/menu): " +
+                    "\nWould you like to take the quiz again or "
+                    "return to the main menu? "
+                    "(quiz/menu): " +
                     Style.RESET_ALL).strip().lower()
                 if play_again == 'quiz':
                     zodiac_quiz()
