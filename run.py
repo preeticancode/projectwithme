@@ -58,8 +58,10 @@ def zodiac_quiz():
     Each correct answer increments the user's score, and the score is displayed at the end.
     """
     clear()  # Clear the terminal before starting the quiz
-    print(Fore.CYAN + "\nZodiac Quiz: Let's see how well you know the Zodiac signs!" +
-          Style.RESET_ALL)
+    print(
+        Fore.CYAN +
+        "\nZodiac Quiz: Let's see how well you know the Zodiac signs!" +
+        Style.RESET_ALL)
 
     questions = {
         "Which Zodiac sign is known for being adventurous?": "sagittarius",
@@ -71,8 +73,7 @@ def zodiac_quiz():
         "Which Zodiac sign is represented by the scales?": "libra",
         "Which Zodiac sign is known for being emotional and nurturing?": "cancer",
         "Which Zodiac sign is symbolized by the ram?": "aries",
-        "Which Zodiac sign is known for being independent and original?": "aquarius"
-    }
+        "Which Zodiac sign is known for being independent and original?": "aquarius"}
 
     # Randomly select 5 questions
     selected_questions = random.sample(list(questions.items()), 5)
@@ -84,18 +85,26 @@ def zodiac_quiz():
             if answer:  # Check if the input is not blank
                 break
             else:
-                print(Fore.RED + "Answer cannot be blank. Please enter a valid answer." +
-                      Style.RESET_ALL)
+                print(
+                    Fore.RED +
+                    "Answer cannot be blank. Please enter a valid answer." +
+                    Style.RESET_ALL)
 
         if answer == correct_answer:
             print(Fore.GREEN + "Correct!" + Style.RESET_ALL)
             score += 1
         else:
-            print(Fore.RED + f"Wrong! The correct answer was {correct_answer.capitalize()}." +
-                  Style.RESET_ALL)
+            print(
+                Fore.RED +
+                f"Wrong! The correct answer was {
+                    correct_answer.capitalize()}." +
+                Style.RESET_ALL)
 
-    print(Fore.CYAN + f"\nYou got {score} out of {len(selected_questions)} correct!" +
-          Style.RESET_ALL)
+    print(
+        Fore.CYAN +
+        f"\nYou got {score} out of {
+            len(selected_questions)} correct!" +
+        Style.RESET_ALL)
 
 
 def zodiac_game():
@@ -106,35 +115,48 @@ def zodiac_game():
     is determined using their birth month and day.
     """
     clear()  # Clear the terminal at the start of the game
-    print(Fore.CYAN + "Please enter your birthdate to find out your zodiac sign." +
-          Style.RESET_ALL)
+    print(
+        Fore.CYAN +
+        "Please enter your birthdate to find out your zodiac sign." +
+        Style.RESET_ALL)
 
     while True:
         # Get user's birthdate
-        birthdate_str = input(Fore.YELLOW + "Enter your birthdate (YYYY-MM-DD): " +
-                              Style.RESET_ALL)
+        birthdate_str = input(
+            Fore.YELLOW +
+            "Enter your birthdate (YYYY-MM-DD): " +
+            Style.RESET_ALL)
 
         # Convert the input to a date object
         try:
             birthdate = datetime.strptime(birthdate_str, "%Y-%m-%d")
             break
         except ValueError:
-            print(Fore.RED + "Invalid date format. Please enter the date in YYYY-MM-DD format." +
-                  Style.RESET_ALL)
+            print(
+                Fore.RED +
+                "Invalid date format. Please enter the date in YYYY-MM-DD format." +
+                Style.RESET_ALL)
 
             # Retry loop for valid input (yes or no)
             while True:
-                retry = input(Fore.YELLOW + "Would you like to retry? (yes/no): " +
-                              Style.RESET_ALL).strip().lower()
+                retry = input(
+                    Fore.YELLOW +
+                    "Would you like to retry? (yes/no): " +
+                    Style.RESET_ALL).strip().lower()
                 if retry == 'yes':
                     break
                 elif retry == 'no':
-                    print(Fore.MAGENTA + "Returning to the main menu..." + Style.RESET_ALL)
+                    print(
+                        Fore.MAGENTA +
+                        "Returning to the main menu..." +
+                        Style.RESET_ALL)
                     main_menu()
                     return  # Return to the main menu
                 else:
-                    print(Fore.RED + "Invalid input. Please enter 'yes' or 'no'." +
-                          Style.RESET_ALL)
+                    print(
+                        Fore.RED +
+                        "Invalid input. Please enter 'yes' or 'no'." +
+                        Style.RESET_ALL)
 
     # Get day and month from the birthdate
     day = birthdate.day
@@ -147,22 +169,32 @@ def zodiac_game():
         print(Fore.GREEN + f"\nYour zodiac sign is {sign}!" + Style.RESET_ALL)
         print(Fore.CYAN + f"Description: {description}" + Style.RESET_ALL)
     else:
-        print(Fore.RED + "Sorry, we couldn't determine your zodiac sign. Please try again." +
-              Style.RESET_ALL)
+        print(
+            Fore.RED +
+            "Sorry, we couldn't determine your zodiac sign. Please try again." +
+            Style.RESET_ALL)
 
     # Ask if the user wants to play again or return to the main menu
     while True:
-        play_again = input(Fore.YELLOW + "\nWould you like to play again or return to the main menu? (play/menu): " +
-                          Style.RESET_ALL).strip().lower()
+        play_again = input(
+            Fore.YELLOW +
+            "\nWould you like to play again or return to the main menu? (play/menu): " +
+            Style.RESET_ALL).strip().lower()
         if play_again == 'play':
             zodiac_game()
             break
         elif play_again == 'menu':
-            print(Fore.MAGENTA + "Returning to the main menu..." + Style.RESET_ALL)
+            print(
+                Fore.MAGENTA +
+                "Returning to the main menu..." +
+                Style.RESET_ALL)
             main_menu()
             break
         else:
-            print(Fore.RED + "Invalid input. Please enter 'play' or 'menu'." + Style.RESET_ALL)
+            print(
+                Fore.RED +
+                "Invalid input. Please enter 'play' or 'menu'." +
+                Style.RESET_ALL)
 
 
 def main_menu():
@@ -182,7 +214,10 @@ def main_menu():
     print(Fore.YELLOW + "2. Take a Zodiac Quiz" + Style.RESET_ALL)
 
     while True:
-        choice = input(Fore.CYAN + "\nEnter your choice (1/2): " + Style.RESET_ALL).strip()
+        choice = input(
+            Fore.CYAN +
+            "\nEnter your choice (1/2): " +
+            Style.RESET_ALL).strip()
 
         if choice == '1':
             zodiac_game()
@@ -190,18 +225,25 @@ def main_menu():
         elif choice == '2':
             zodiac_quiz()
             while True:
-                play_again = input(Fore.YELLOW + "\nWould you like to take the quiz again or return to the main menu? (quiz/menu): " +
-                                  Style.RESET_ALL).strip().lower()
+                play_again = input(
+                    Fore.YELLOW +
+                    "\nWould you like to take the quiz again or return to the main menu? (quiz/menu): " +
+                    Style.RESET_ALL).strip().lower()
                 if play_again == 'quiz':
                     zodiac_quiz()
                     continue
                 elif play_again == 'menu':
-                    print(Fore.MAGENTA + "Returning to the main menu..." + Style.RESET_ALL)
+                    print(
+                        Fore.MAGENTA +
+                        "Returning to the main menu..." +
+                        Style.RESET_ALL)
                     main_menu()
                     break
                 else:
-                    print(Fore.RED + "Invalid input. Please enter 'quiz' or 'menu'." +
-                          Style.RESET_ALL)
+                    print(
+                        Fore.RED +
+                        "Invalid input. Please enter 'quiz' or 'menu'." +
+                        Style.RESET_ALL)
             break
         else:
             print(Fore.RED + "Invalid choice. Please select option 1 or 2." +
