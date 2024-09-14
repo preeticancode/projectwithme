@@ -5,8 +5,8 @@ Inspired by the joy of discovering new things with family, this Zodiac Game comb
   
 [Click here to be taken to the final deployment of the project.](https://projectwithme-a171b5a32073.herokuapp.com/)
 
-![Screenshot of the games welcome screen](docs/screenshots/flowchart1.png)
-![Screenshot of the games welcome screen](docs/screenshots/flowchart2.png)
+![Screenshot of the games welcome screen](docs/screenshots/welcome-screen.jpg)
+
 ## **Table of Contents** 
 * [**Zodiac With ME**](#zodiac-with-me)
   * [**Overview**](#overview)
@@ -135,7 +135,8 @@ To achieve the above, the site will:
 ## ***Game Flow Chart:***
 To understand the steps required in order to program the game, I created the below flowchart using [lucid charts](https://www.draw.io/).  
 
-![Game Logic Flowchart](docs/flowcharts/flowchart.jpeg) 
+![Game Logic Flowchart](docs/screenshots/flowchart1.png)
+![Game Logic Flowchart](docs/screenshots/flowchart2.png)
 
 ## **Welcome Screen:**
 From the welcome screen, the user has access to two things: -
