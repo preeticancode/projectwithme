@@ -5,8 +5,8 @@ Inspired by the joy of discovering new things with family, this Zodiac Game comb
   
 [Click here to be taken to the final deployment of the project.](https://projectwithme-a171b5a32073.herokuapp.com/)
 
-![Screenshot of the games welcome screen](views/docs/screenshots/title-screen-screenshot.jpg)
-
+![Screenshot of the games welcome screen](docs/screenshots/flowchart1.png)
+![Screenshot of the games welcome screen](docs/screenshots/flowchart2.png)
 ## **Table of Contents** 
 * [**Zodiac With ME**](#zodiac-with-me)
   * [**Overview**](#overview)
@@ -142,7 +142,7 @@ From the welcome screen, the user has access to two things: -
 * Find Your Zodiac Sign
 * Take a Zodiac Quiz  
   
-![Welcome screen screenshot](views/docs/screenshots/welcome-screen.jpg)
+![Welcome screen screenshot](docs/screenshots/welcome-screen.jpg)
 
 ### **Terminal Clearing:**
 Clears the terminal screen to enhance user experience.
@@ -151,14 +151,14 @@ Clears the terminal screen to enhance user experience.
 * Allows users to find their Zodiac sign based on their birthdate.
 * Provides a brief description of each Zodiac sign
 
-![Option 1 Zodiac Sign Determination](views/docs/screenshots/option1.jpg)
+![Option 1 Zodiac Sign Determination](docs/screenshots/option1.jpg)
 
 ### **Zodiac Interactive Quiz:**
 * Presents a quiz with 5 randomly selected questions about Zodiac signs.
 * Provides feedback on correct and incorrect answers.
 * Displays the user's score at the end of the quiz.
 
-![Option 2 Zodiac Interactive Quiz](views/docs/screenshots/option2.jpg)
+![Option 2 Zodiac Interactive Quiz](docs/screenshots/option2.jpg)
 
 ## **Once User Selected:**
 
@@ -221,51 +221,51 @@ Clears the terminal screen to enhance user experience.
 ## **Future-Enhancements**
 
 ### **Graphical User Interface (GUI)**:
-    - Replacing the command-line interface with a graphical interface using libraries like Tkinter or PyQt.
-    - Utilizing buttons, drop-down menus, and visual elements for a more interactive user experience.
+  - Replacing the command-line interface with a graphical interface using libraries like Tkinter or PyQt.
+  - Utilizing buttons, drop-down menus, and visual elements for a more interactive user experience.
 
 ### **Zodiac Personality Quiz**:
-    - Implementing a personality quiz that matches users to their Zodiac sign based on traits, rather than their birthdate.
-    - Asking questions about habits, preferences, and personal traits for a fun, engaging experience.
+  - Implementing a personality quiz that matches users to their Zodiac sign based on traits, rather than their birthdate.
+  - Asking questions about habits, preferences, and personal traits for a fun, engaging experience.
 
 ### **Daily/Monthly Horoscope**:
-    - Adding daily or monthly horoscope features by integrating an API or scraping horoscope data from reliable sources.
+  - Adding daily or monthly horoscope features by integrating an API or scraping horoscope data from reliable sources.
 
 ### **Extended Zodiac Information**:
-    - Providing additional insights like compatibility, famous personalities, lucky numbers, ruling planets, and gemstones for each Zodiac sign.
+  - Providing additional insights like compatibility, famous personalities, lucky numbers, ruling planets, and gemstones for each Zodiac sign.
 
 ### **Zodiac Compatibility Checker**:
-    - Allowing users to input two birthdates to check compatibility between Zodiac signs, useful for friendships or romantic relationships.
+  - Allowing users to input two birthdates to check compatibility between Zodiac signs, useful for friendships or romantic relationships.
 
 ### **User Profiles**:
-    - Adding a feature where users can save their birthdate, quiz scores, and preferences, stored locally or in a database for personalized content.
+  - Adding a feature where users can save their birthdate, quiz scores, and preferences, stored locally or in a database for personalized content.
 
 ### **Quiz Leaderboards**:
-    - Implementing a leaderboard to track top quiz scores, either locally or online, for competitive play.
+  - Implementing a leaderboard to track top quiz scores, either locally or online, for competitive play.
 
 ### **Multilingual Support**:
-    - Adding support for multiple languages, enabling a broader global reach using libraries like gettext.
+  - Adding support for multiple languages, enabling a broader global reach using libraries like gettext.
 
 ### **Advanced Zodiac Quizzes**:
-    - Creating more detailed quizzes with advanced questions about astrology, including planets and houses, and add time limits for a competitive edge.
+  - Creating more detailed quizzes with advanced questions about astrology, including planets and houses, and add time limits for a competitive edge.
 
 ### **Astrological Birth Chart Calculator**:
-    - Adding a feature to calculate users’ full birth chart, including sun, moon, and rising signs, based on their birth date, time, and location.
+  - Adding a feature to calculate users’ full birth chart, including sun, moon, and rising signs, based on their birth date, time, and location.
 
 ### **Personalized Daily Reminders**:
-    - Implementing daily notifications for horoscopes or astrological tips via email, SMS, or in-app notifications.
+  - Implementing daily notifications for horoscopes or astrological tips via email, SMS, or in-app notifications.
 
 ### **Astrology Learning Resources**:
-    - Providing articles or learning resources about Zodiac signs, planets, and other astrology terms to educate users.
+  - Providing articles or learning resources about Zodiac signs, planets, and other astrology terms to educate users.
 
 ### **Social Media Integration**:
-    - Adding features to share Zodiac signs, quiz results, or horoscopes on social platforms like Twitter, Instagram, or Facebook.
+  - Adding features to share Zodiac signs, quiz results, or horoscopes on social platforms like Twitter, Instagram, or Facebook.
 
 ### **Sound Effects and Music**:
-    - Introducing sound effects for correct answers, background music for immersive gameplay, and Zodiac sign reveals.
+  - Introducing sound effects for correct answers, background music for immersive gameplay, and Zodiac sign reveals.
 
 ### **Mobile App Conversion**:
-    - Converting the program into a mobile app using frameworks like Kivy or React Native, allowing users to engage with it on-the-go.
+  - Converting the program into a mobile app using frameworks like Kivy or React Native, allowing users to engage with it on-the-go.
 
 # **Testing Phase**
 I have included details of testing both during development and post development in a separate document called [TESTING.md](TESTING.md).
@@ -324,7 +324,7 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
    * Select the correct branch for deployment from the drop-down menu and click the "Deploy Branch" button for manual deployment. 
 
 # **Honorable Mentions**
-*- [David Bowers](https://github.com/dnlbowers) for inspiring me with his 3rd Portfolio Project: [Battleships](https://dnlbowers-battleship.herokuapp.com/) . My fantastic mentor at Code Institute, thank you for your support, feedback, bug testing and great human.
+* [David Bowers](https://github.com/dnlbowers) for inspiring me with his 3rd Portfolio Project: [Battleships](https://dnlbowers-battleship.herokuapp.com/) . My fantastic mentor at Code Institute, thank you for your support, feedback, bug testing and great human.
 * Lewis my Cohort Facilitator helped me in revewing the project and also helped me with the idea.
 * The Code Institute Slack community as a whole who tested and supported throughout.  
 * And the **biggest thanks goes to** my Husband and my boys, who have had to deal with me face to face through it all. 
@@ -342,3 +342,6 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 * Favicon image taken from [pixabay](https://pixabay.com/photos/battleship-us-navy-broadside-firing-79519/) under Pixabay License, Free for commercial use, No attribution required however the user who posted the image was "12019 / 10259 images" 
 * Background image was downloaded from [stock.adobe.com](https://stock.adobe.com/mt/Library/urn:aaid:sc:EU:7b501d7b-97a5-4e2a-8638-7d43341ae21b?asset_id=176108523) under the [standard license](https://stock.adobe.com/mt/license-terms)
 * [stack overflow]() was used to resolve the [HTML error found by the validator](https://stackoverflow.com/questions/12150369/define-multiple-languages-in-html-root-elements-lang-attribute) and to find the [string library](https://stackoverflow.com/questions/1549641/how-can-i-capitalize-the-first-letter-of-each-word-in-a-string) to ensure the player name always showed with a capital at the start of each name entered.
+
+
+[Back to top](#contents)
