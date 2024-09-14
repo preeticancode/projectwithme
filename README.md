@@ -331,18 +331,18 @@ The project was deployed to [Heroku](https://www.heroku.com) using the below pro
 * And the **biggest thanks goes to** my Husband and my boys, who have had to deal with me face to face through it all. 
 
 # **Credits**
-* Python OOP Tutorial series by Corey Schafer for general reference on working with classes and OOP in general  - [First of six videos in the series](https://youtu.be/ZDa-Z5JzLYM)  
-* To get a general idea of the game logic, I used this video on the [Devpost Youtube channel](https://youtu.be/zSQIGzmcp2I)  
-* The idea to decorate the board with numbers above and to the side came from [Knowledge Mavens youtube channel](https://youtu.be/alJH_c9t4zw)
-* Clear console function copied from [delftstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
-* How to make a pause for a key to be pressed I referenced from [pretagteam.com](https://pretagteam.com/question/python-press-any-key-to-exit)
-* [draw.io](https://www.draw.io/) was used to create the game flow chart "flowchart.jpeg"
-* [Draw.io](https://app.diagrams.net/) was used to create the setup of objects diagram "Zodiac-With-Me.png"
-* [Code Institute](https://codeinstitute.net/) for providing the template. The [template](https://github.com/Code-Institute-Org/p3-template) gave me a mock terminal to display my game via a webpage.
-* [ASCII Art text generator](http://www.network-science.de/ascii/) used for the welcome screen text.
-* Favicon image taken from [pixabay](https://pixabay.com/photos/battleship-us-navy-broadside-firing-79519/) under Pixabay License, Free for commercial use, No attribution required however the user who posted the image was "12019 / 10259 images" 
-* Background image was downloaded from [stock.adobe.com](https://stock.adobe.com/mt/Library/urn:aaid:sc:EU:7b501d7b-97a5-4e2a-8638-7d43341ae21b?asset_id=176108523) under the [standard license](https://stock.adobe.com/mt/license-terms)
-* [stack overflow]() was used to resolve the [HTML error found by the validator](https://stackoverflow.com/questions/12150369/define-multiple-languages-in-html-root-elements-lang-attribute) and to find the [string library](https://stackoverflow.com/questions/1549641/how-can-i-capitalize-the-first-letter-of-each-word-in-a-string) to ensure the player name always showed with a capital at the start of each name entered.
+* For general guidance on working with classes and object-oriented programming in Python, I referred to Corey Schafer’s [OOP Tutorial series](https://youtu.be/ZDa-Z5JzLYM).
+* To understand the game logic, I used a video from the [Devpost YouTube channel](https://youtu.be/zSQIGzmcp2I).
+* The idea of decorating the board with numbers above and to the side was inspired by a video from the [Knowledge Mavens YouTube channel](https://youtu.be/alJH_c9t4zw).
+* I copied the clear console function from [delftstack.com](https://www.delftstack.com/howto/python/python-clear-console/).
+* For implementing a key press to pause the game, I referenced a solution from [pretagteam.com](https://pretagteam.com/question/python-press-any-key-to-exit).
+* I used [draw.io](https://www.draw.io/) to create the game flow chart, named "flowchart.jpeg."
+* The setup of objects diagram, "Zodiac-With-Me.png," was also created using [Draw.io](https://app.diagrams.net/).
+* The [Code Institute](https://codeinstitute.net/) provided a template which included a mock terminal for displaying my game on a webpage. The [template](https://github.com/Code-Institute-Org/p3-template) was particularly useful.
+* An [ASCII Art text generator](http://www.network-science.de/ascii/) was used to create the welcome screen text.
+* The background image was downloaded from [Adobe Stock](https://stock.adobe.com/mt/Library/urn:aaid:sc:EU:7b501d7b-97a5-4e2a-8638-7d43341ae21b?asset_id=176108523) under the [standard license](https://stock.adobe.com/mt/license-terms).
+* I used [Stack Overflow](https://stackoverflow.com/questions/12150369/define-multiple-languages-in-html-root-elements-lang-attribute) to resolve an HTML validation error and to find a [string library](https://stackoverflow.com/questions/1549641/how-can-i-capitalize-the-first-letter-of-each-word-in-a-string) to ensure that player names always start with a capital letter.
+
 
 
 [Back to top](#contents)
