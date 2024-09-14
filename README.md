@@ -41,7 +41,7 @@ Inspired by the joy of discovering new things with family, this Zodiac Game comb
     * [***User Profiles:***](#user-profiles)
     * [***Leaderboards for Quiz:***](#leaderboards-for-quiz)
     * [***Multilingual Support:***](#multilingual-support)
-    * [***More Advanced Zodiac Quizzes:***](#more-advanced-zodiac-quizzes:)
+    * [***More Advanced Zodiac Quizzes:***](#more-advanced-zodiac-quizzes)
     * [***Astrological Birth Chart Calculator:***](#astrological-birth-chart-calculator)
     * [***Personalized Daily Reminders:***](#personalized-daily-reminders)
     * [***Astrology Learning Resources:***](#astrology-learning-resources)
