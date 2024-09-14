@@ -133,7 +133,7 @@ To achieve the above, the site will:
 * Personal Touch: Reflecting personal inspirations and stories in the game’s design and content to enhance connection and engagement.
 
 ## ***Game Flow Chart:***
-To understand the steps required in order to program the game, I created the below flowchart using [lucid charts](https://www.draw.io/).  
+To understand the steps required in order to program the game, I created the below flowchart using [Draw-io](https://www.draw.io/).  
 
 ![Game Logic Flowchart](docs/screenshots/flowchart1.png)
 ![Game Logic Flowchart](docs/screenshots/flowchart2.png)
